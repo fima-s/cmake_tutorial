@@ -1,9 +1,9 @@
 // A simple program that computes the square root of a number
-#include <cmath>
 #include <iostream>
 #include <string>
 #include "../include/TutorialConfig.h"
 
+#include "../MathFunctions/include/MathFunctions.h"
 
 int main(int argc, char* argv[])
 {
@@ -21,8 +21,10 @@ int main(int argc, char* argv[])
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 
+  // TODO 6: Replace sqrt with mathfunctions::sqrt
+
   // calculate square root
-  const double outputValue = sqrt(inputValue);
+  const double outputValue = mathfunctions::sqrt(inputValue);
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
   return 0;
