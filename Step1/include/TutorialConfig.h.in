@@ -1,2 +1,8 @@
 // the configured options and settings for Tutorial
 // TODO 10: Define Tutorial_VERSION_MAJOR and Tutorial_VERSION_MINOR
+
+#include <string>
+
+const std::string tutorial_VERSION_MAJOR = ${tutorial_VERSION_MAJOR};
+const std::string tutorial_VERSION_MINOR = ${tutorial_VERSION_MINOR};
+const std::string tutorial_VERSION_PATCH = ${tutorial_VERSION_PATCH};
