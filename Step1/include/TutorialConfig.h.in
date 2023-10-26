@@ -3,6 +3,6 @@
 
 #include <string>
 
-const std::string tutorial_VERSION_MAJOR = ${tutorial_VERSION_MAJOR};
-const std::string tutorial_VERSION_MINOR = ${tutorial_VERSION_MINOR};
-const std::string tutorial_VERSION_PATCH = ${tutorial_VERSION_PATCH};
+const std::string tutorial_VERSION_MAJOR = "${tutorial_VERSION_MAJOR}";
+const std::string tutorial_VERSION_MINOR = "${tutorial_VERSION_MINOR}";
+const std::string tutorial_VERSION_PATCH = "${tutorial_VERSION_PATCH}";

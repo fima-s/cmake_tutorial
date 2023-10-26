@@ -14,6 +14,10 @@ int main(int argc, char* argv[])
     return 1;
   }
 
+  std::cout << argv[0] << " "  << tutorial_VERSION_MAJOR << "."
+                            << tutorial_VERSION_MINOR << "."
+                            << tutorial_VERSION_PATCH << "." << std::endl;
+
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 

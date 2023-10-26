@@ -3,6 +3,6 @@
 
 #include <string>
 
-const std::string tutorial_VERSION_MAJOR = 1;
-const std::string tutorial_VERSION_MINOR = 2;
-const std::string tutorial_VERSION_PATCH = 66;
+const std::string tutorial_VERSION_MAJOR = "1";
+const std::string tutorial_VERSION_MINOR = "2";
+const std::string tutorial_VERSION_PATCH = "66";

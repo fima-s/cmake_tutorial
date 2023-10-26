@@ -1,10 +1,18 @@
 cmake_minimum_required(VERSION 3.15)
 set(CMAKE_VERBOSE_MAKEFILE ON)
+
+set(tutorial_VERSION_MAJOR 1)
+set(tutorial_VERSION_MINOR 2)
+set(tutorial_VERSION_PATCH 66)
+
+
+
 # Ни один cmake проект не создается без команды project можно без всего остального
 # но project должен быть, если нету, то упадет с ошибкой
-project (Step1_project)
+project (Step1_project
+        VERSION ${tutorial_VERSION_MAJOR}.${tutorial_VERSION_MINOR}.${tutorial_VERSION_PATCH})
 
-# set это осздание переменной с которой ассоциируетяс следующий набор сорс файлов
+# set это создание переменной с которой ассоциируется следующий набор сорс файлов
 set(    SOURCES
         ${PROJECT_SOURCE_DIR}/src/tutorial.cpp # или CMAKE_SOURCE_DIR
         )
@@ -12,13 +20,9 @@ set(    SOURCES
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(tutorial_VERSION_MAJOR "1")
-set(tutorial_VERSION_MINOR "2")
-set(tutorial_VERSION_PATCH "66")
-
 # Данная процедура подхватит значения переменныз из set
 # tutorial_VERSION_MAJOR, tutorial_VERSION_MINOR, tutorial_VERSION_PATCH
-# и заменит значениями закглушки @tutorial_VERSION_MAJOR, @tutorial_VERSION_MINOR
+# и заменит значениями заглушки @tutorial_VERSION_MAJOR, @tutorial_VERSION_MINOR
 # @tutorial_VERSION_PATCH input файле .in, результат будет сохранен в
 # в output файл десь это TutorialConfig.h
 configure_file( ${PROJECT_SOURCE_DIR}/include/TutorialConfig.h.in
@@ -26,10 +30,10 @@ configure_file( ${PROJECT_SOURCE_DIR}/include/TutorialConfig.h.in
 
 add_executable(Step1_project ${SOURCES})
 
-target_include_directories(Step1_project
-        PRIVATE
-        ${PROJECT_SOURCE_DIR}/include/TutorialConfig.h.in
-        )
+#target_include_directories(Step1_project
+#        PRIVATE
+#        ${PROJECT_SOURCE_DIR}/include/TutorialConfig.h
+#        )
 
 
 # Еще важная заметка
