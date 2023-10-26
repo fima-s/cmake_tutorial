@@ -19,6 +19,9 @@ set(    SOURCES
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+# Данная строчка соотвествуте активации именно -std=c++11, а не std=gnu++11
+# gnu++11 это с++11 с расширениями
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Данная процедура подхватит значения переменныз из set
 # tutorial_VERSION_MAJOR, tutorial_VERSION_MINOR, tutorial_VERSION_PATCH
