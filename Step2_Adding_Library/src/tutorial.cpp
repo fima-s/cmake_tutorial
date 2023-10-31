@@ -3,7 +3,8 @@
 #include <string>
 #include "../include/TutorialConfig.h"
 
-#include "../MathFunctions/include/MathFunctions.h"
+//#include "../MathFunctions/include/MathFunctions.h"
+#include <MathFunctions.h> // ?
 
 int main(int argc, char* argv[])
 {
