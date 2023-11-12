@@ -1,10 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-
-# TODO 14: Remove mysqrt.cxx from the list of sources
-
-# TODO 1: Add a library called MathFunctions with sources MathFunctions.cxx
-# and mysqrt.cxx
-# Hint: You will need the add_library command
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 #option(USE_MYMATH "Use tutorial provided math implementation" ON)
 
@@ -45,3 +40,20 @@ endif()
 
 
 target_include_directories( MathFunctions PRIVATE ${PROJECT_SOURCE_DIR}/include)
+
+#PRIVATE служит для того, чтобы указать какие элементы (исходники, библиотеки, цели)
+#необходимы для сборки этой цели. Т.е. эта цель зависима от этих элементов,
+#но другие цели, которые будут использовать эту цель в качестве зависимости,
+#не получат её зависимости транзитивно. Т.е. если цель A зависит от нашей цели
+#Target, у которой в качестве приватной зависимости указана цель Dep, то A не
+#будет зависеть от Dep, а Target будет использовать Dep при сборке себя.
+#
+#INTERFACE служит для указания элементов, которые не нужны для сборки этой цели,
+#но они должны быть «прокинуты» для любой цели, которая данную цель указывает
+#в качестве зависимости. Т.е. если цель A зависит от нашей цели Target, у которой
+#в качестве интерфейсной зависимости указана цель Dep, то A будет зависеть от Dep,
+#но Target не будет использовать Dep при сборке себя.
+#
+#PUBLIC аналогичен связке INTERFACE и PRIVATE. Т.е. если цель A зависит от нашей
+#цели Target, у которой в качестве публичной зависимости указана цель Dep, то A
+#будет зависеть от Dep, а Target будет использовать Dep при сборке себя.
